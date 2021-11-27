@@ -1,0 +1,11 @@
+@import "./libs/normalize";
+@import "./components/all";
+
+.app {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+
+  border: 1px solid black;
+}

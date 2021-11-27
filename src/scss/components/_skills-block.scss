@@ -1,0 +1,35 @@
+.skills-block {
+  width: 40%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid red;
+
+  .skill-bar {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    .content {
+      display: grid;
+      gap: 5px;
+      grid-template-columns: repeat(5, 1fr);
+
+      div {
+        border: 1px solid blue;
+      }
+
+      .length-cell {
+        grid-column: 1 / span 5;
+      }
+    }
+  }
+
+  .avaliable-skills {
+    display: flex;
+    justify-content: center;
+  }
+}
