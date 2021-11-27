@@ -1,5 +1,5 @@
 .skills-block {
-  width: 40%;
+  width: 35%;
 
   display: flex;
   flex-direction: column;
@@ -9,11 +9,12 @@
 
   .skill-bar {
     width: 100%;
-
     display: flex;
     justify-content: center;
+    margin-top: 20%;
 
     .content {
+      width: 100%;
       display: grid;
       gap: 5px;
       grid-template-columns: repeat(5, 1fr);
@@ -22,7 +23,11 @@
         border: 1px solid blue;
       }
 
-      .length-cell {
+      .skill-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         grid-column: 1 / span 5;
       }
     }

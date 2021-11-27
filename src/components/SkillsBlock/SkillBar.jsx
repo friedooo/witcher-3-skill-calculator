@@ -9,7 +9,10 @@ function SkillBar() {
         <div>1</div>
         <div>1</div>
         <div>1</div>
-        <div className="length-cell">1</div>
+        <div className="skill-info">
+          <span>Умения</span>
+          <span>Очков потрачено: 1</span>
+        </div>
         <div>1</div>
         <div>1</div>
         <div>1</div>
