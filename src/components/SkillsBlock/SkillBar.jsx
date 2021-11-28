@@ -4,7 +4,7 @@ function SkillBar() {
   return (
     <div className="skill-bar">
       <div className="content">
-        <div>1</div>
+        <div className="test">1</div>
         <div>1</div>
         <div>1</div>
         <div>1</div>

@@ -20,7 +20,21 @@
       grid-template-columns: repeat(5, 1fr);
 
       div {
+        width: 100%;
+        height: 59px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
         border: 1px solid blue;
+      }
+
+      .test {
+        color: white;
+
+        background-image: url("../../images/skill.png");
+        background-repeat: no-repeat;
+        background-size: 101%;
       }
 
       .skill-info {
