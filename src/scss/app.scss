@@ -8,10 +8,14 @@
   display: flex;
   justify-content: space-around;
 
+  background-image: url("../images/WP.jpg");
+  background-size: cover;
   border: 1px solid black;
 
   div,
   span {
+    color: white;
     font-family: "PTN57";
+    font-size: 104%;
   }
 }
