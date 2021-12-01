@@ -1,5 +1,6 @@
 @import "./libs/normalize";
 @import "./components/all";
+@import "./fonts/fonts";
 
 .app {
   width: 90vw;
@@ -8,4 +9,9 @@
   justify-content: space-around;
 
   border: 1px solid black;
+
+  div,
+  span {
+    font-family: "PTN57";
+  }
 }

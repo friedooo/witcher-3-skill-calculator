@@ -23,9 +23,9 @@ function SkillBar() {
 
   return (
     <div className="skill-bar">
-      <button onClick={onPlusPoint}>+</button>
+      {/* <button onClick={onPlusPoint}>+</button>
       <button onClick={onMinusPoint}>-</button>
-      <button onClick={onClearSkill}>clear</button>
+      <button onClick={onClearSkill}>clear</button> */}
       <div className="content">
         <div className="test">1</div>
         <div>1</div>
