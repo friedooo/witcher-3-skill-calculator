@@ -10,7 +10,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 15%;
 
     .content {
       width: 97%;
@@ -19,8 +19,8 @@
       grid-template-columns: repeat(5, 1fr);
 
       div {
-        width: 100%;
-        height: 64px;
+        width: 90px;
+        height: 90px;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
@@ -31,13 +31,31 @@
       .test {
         color: white;
 
-        background-image: url("../../images/skill.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        // background-image: url("../../images/Traced.svg");
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // background-position: center;
+
+        background-color: white;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+
+        svg:hover {
+          path {
+            fill: #a70d0d;
+          }
+        }
+
+        .counter {
+          position: absolute;
+        }
       }
 
       .skill-info {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
