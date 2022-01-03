@@ -50,6 +50,7 @@
         }
 
         .counter {
+          pointer-events: none;
           position: absolute;
         }
       }
