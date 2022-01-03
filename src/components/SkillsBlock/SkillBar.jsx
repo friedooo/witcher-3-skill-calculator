@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { CripplingStrikes } from "../../images/combatSkills";
+import { CombatSkills, CripplingStrikes } from "../../images/Combat";
 
 import {
   plusSkillPoint,
@@ -30,7 +30,7 @@ function SkillBar() {
       <button onClick={onClearSkill}>clear</button> */}
       <div className="content">
         <div className="test">
-          <CripplingStrikes />
+          <CombatSkills />
           <div className="counter">1</div>
         </div>
         <div>1</div>
