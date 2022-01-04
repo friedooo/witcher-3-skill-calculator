@@ -19,18 +19,18 @@
       grid-template-columns: repeat(5, 1fr);
 
       div {
-        width: 90px;
-        height: 90px;
+        width: 64px;
+        height: 64px;
         justify-self: center;
 
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
 
-        border: 1px solid blue;
+        border: 1px solid rgb(134, 134, 165);
       }
 
-      .test {
+      .skill {
         color: white;
 
         // background-image: url("../../images/Traced.svg");
