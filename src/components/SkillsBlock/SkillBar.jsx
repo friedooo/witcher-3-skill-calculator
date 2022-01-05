@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import SkillHoc from "../../hoc/SkillHoc";
+
 import {
   CombatSkills,
   Signs,
@@ -64,128 +66,159 @@ function SkillBar() {
       <button onClick={onClearSkill}>clear</button> */}
       <div className="content">
         <div className="skill">
-          <CombatSkills />
-          <div className="counter">1</div>
+          {/* <CombatSkills /> */}
+          <SkillHoc>
+            <CombatSkills />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Signs />
-          <div className="counter">1</div>
+          <SkillHoc>
+            <Signs />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <AlchemySkills />
-          <div className="counter">1</div>
+          <SkillHoc>
+            <AlchemySkills />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <GeneralSkills />
-          <div className="counter">1</div>
+          <SkillHoc>
+            <GeneralSkills />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Mutagens />
-          <div className="counter">1</div>
+          <SkillHoc>
+            <Mutagens />
+          </SkillHoc>
         </div>
         <div className="skill-info">
           <span>Умения</span>
           <span>Очков потрачено: 1</span>
         </div>
         <div className="skill">
-          <FastAttack />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <FastAttack />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <StrongAttack />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <StrongAttack />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Defense />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <Defense />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Marksmanship />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <Marksmanship />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <BattleTrance />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <BattleTrance />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <MuscleMemory />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <MuscleMemory />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <StrengthTraining />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <StrengthTraining />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <ArrowDeflection />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <ArrowDeflection />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <LightningReflexes />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <LightningReflexes />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Resolve />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <Resolve />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <PreciseBlows />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <PreciseBlows />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <CrushingBlows />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <CrushingBlows />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <FleetFooted />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <FleetFooted />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <ColdBlood />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <ColdBlood />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Undying />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <Undying />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Whirl />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <Whirl />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Rend />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <Rend />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <Counterattack />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <Counterattack />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <AnatomicalKnowledge />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <AnatomicalKnowledge />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <RazorFocus />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <RazorFocus />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <CripplingStrikes />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <CripplingStrikes />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <SunderArmor />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <SunderArmor />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <DeadlyPrecision />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <DeadlyPrecision />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <CripplingShot />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <CripplingShot />
+          </SkillHoc>
         </div>
         <div className="skill">
-          <FloodOfAnger />
-          <div className="counter">1</div>
+          <SkillHoc counter>
+            <FloodOfAnger />
+          </SkillHoc>
         </div>
       </div>
     </div>
