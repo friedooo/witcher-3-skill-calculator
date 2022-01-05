@@ -3,6 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 
 import {
   CombatSkills,
+  Signs,
+  AlchemySkills,
+  GeneralSkills,
+  Mutagens,
+} from "../../images/SkillLabels";
+
+import {
   FastAttack,
   StrongAttack,
   Defense,
@@ -24,6 +31,10 @@ import {
   AnatomicalKnowledge,
   RazorFocus,
   CripplingStrikes,
+  SunderArmor,
+  DeadlyPrecision,
+  CripplingShot,
+  FloodOfAnger,
 } from "../../images/Combat";
 
 import {
@@ -57,19 +68,19 @@ function SkillBar() {
           <div className="counter">1</div>
         </div>
         <div className="skill">
-          {" "}
+          <Signs />
           <div className="counter">1</div>
         </div>
         <div className="skill">
-          {" "}
+          <AlchemySkills />
           <div className="counter">1</div>
         </div>
         <div className="skill">
-          {" "}
+          <GeneralSkills />
           <div className="counter">1</div>
         </div>
         <div className="skill">
-          {" "}
+          <Mutagens />
           <div className="counter">1</div>
         </div>
         <div className="skill-info">
@@ -161,15 +172,19 @@ function SkillBar() {
           <div className="counter">1</div>
         </div>
         <div className="skill">
+          <SunderArmor />
           <div className="counter">1</div>
         </div>
         <div className="skill">
+          <DeadlyPrecision />
           <div className="counter">1</div>
         </div>
         <div className="skill">
+          <CripplingShot />
           <div className="counter">1</div>
         </div>
         <div className="skill">
+          <FloodOfAnger />
           <div className="counter">1</div>
         </div>
       </div>
