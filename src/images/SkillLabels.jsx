@@ -95,4 +95,14 @@ function Mutagens() {
   );
 }
 
-export { CombatSkills, Signs, AlchemySkills, GeneralSkills, Mutagens };
+const SkillLabelsArr = [
+  <CombatSkills />,
+  <Signs />,
+  <AlchemySkills />,
+  <GeneralSkills />,
+  <Mutagens />,
+];
+
+//export { CombatSkills, Signs, AlchemySkills, GeneralSkills, Mutagens };
+
+export default SkillLabelsArr;
