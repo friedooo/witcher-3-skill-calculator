@@ -32,13 +32,29 @@
 
       .skill {
         color: white;
-
-        // background-image: url("../../images/Traced.svg");
-        // background-repeat: no-repeat;
-        // background-size: cover;
-        // background-position: center;
-
         background-color: white;
+
+        .point-btn {
+          position: absolute;
+          display: flex;
+          flex-wrap: wrap;
+
+          div {
+            display: none;
+          }
+        }
+
+        .point-btn:hover {
+          div {
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 80%;
+          }
+        }
 
         svg {
           width: 100%;
