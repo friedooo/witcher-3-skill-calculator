@@ -72,10 +72,7 @@ function SkillBar() {
         {SkillLabelsArr.map((labelSkill) => {
           return (
             <div className="skill">
-              <SkillHoc>
-                <PointButton />
-                {labelSkill}
-              </SkillHoc>
+              <SkillHoc>{labelSkill}</SkillHoc>
             </div>
           );
         })}
@@ -87,6 +84,7 @@ function SkillBar() {
           return (
             <div className="skill">
               <SkillHoc counter points={0}>
+                <PointButton />
                 {combatSkill}
               </SkillHoc>
             </div>

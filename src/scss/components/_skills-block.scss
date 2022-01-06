@@ -19,8 +19,8 @@
       grid-template-columns: repeat(5, 1fr);
 
       div {
-        width: 64px;
-        height: 64px;
+        width: 80px;
+        height: 80px;
         justify-self: center;
 
         display: flex;
@@ -31,12 +31,16 @@
       }
 
       .skill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: white;
         background-color: white;
 
         .point-btn {
           position: absolute;
           display: flex;
+          justify-content: flex-start;
           flex-wrap: wrap;
 
           div {
@@ -44,15 +48,33 @@
           }
         }
 
-        .point-btn:hover {
-          div {
-            width: 50%;
-            height: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        &:hover {
+          .point-btn {
+            div {
+              width: 50%;
+              height: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
 
-            font-size: 80%;
+              cursor: pointer;
+              background-color: rgb(20, 21, 24);
+              font-size: 80%;
+
+              transition: all 0.5s ease;
+            }
+
+            div:nth-child(3n) {
+              width: 70%;
+            }
+
+            .add:hover {
+              background-color: rgb(66, 204, 101);
+            }
+
+            .remove:hover {
+              background-color: rgb(211, 75, 75);
+            }
           }
         }
 
@@ -70,7 +92,7 @@
         .counter {
           pointer-events: none;
           position: absolute;
-          font-size: 80%;
+          font-size: 100%;
         }
       }
 
