@@ -40,7 +40,8 @@ import SkillHoc from "../../hoc/SkillHoc";
 // } from "../../images/Combat";
 
 import SkillLabelsArr from "../../images/SkillLabels";
-import CombarArr from "../../images/Combat";
+import CombatArr from "../../images/Combat";
+import SignsArr from "../../images/SIgns";
 import PointButton from "./PointButton";
 
 import {
@@ -80,12 +81,23 @@ function SkillBar() {
           <span>Умения</span>
           <span>Очков потрачено: 1</span>
         </div>
-        {CombarArr.map((combatSkill) => {
+        {/* {CombatArr.map((combatSkill) => {
           return (
             <div className="skill">
               <SkillHoc counter points={0}>
                 <PointButton />
                 {combatSkill}
+              </SkillHoc>
+            </div>
+          );
+        })} */}
+
+        {SignsArr.map((signSkill) => {
+          return (
+            <div className="skill">
+              <SkillHoc counter points={0}>
+                <PointButton />
+                {signSkill}
               </SkillHoc>
             </div>
           );

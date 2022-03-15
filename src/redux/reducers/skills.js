@@ -16,10 +16,6 @@ const skillsState = {
 
 const skills = (state = skillsState, action) =>
   produce(state, (draft) => {
-    if (action.type === "SET_PIZZAS") {
-      draft.items = action.payload;
-      draft.isLoaded = true;
-    }
     if (action.type === "SET_LOADED") {
       draft.isLoaded = action.payload;
     }
