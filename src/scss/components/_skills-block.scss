@@ -41,7 +41,6 @@
           position: absolute;
           display: flex;
           justify-content: flex-start;
-          flex-wrap: wrap;
 
           div {
             display: none;
@@ -50,22 +49,38 @@
 
         &:hover {
           .point-btn {
+            flex-direction: column;
+            flex-wrap: wrap;
             div {
               width: 50%;
-              height: 50%;
+
               display: flex;
               justify-content: center;
               align-items: center;
 
               cursor: pointer;
               background-color: rgb(20, 21, 24);
-              font-size: 80%;
+              font-size: 90%;
 
               transition: all 0.5s ease;
             }
 
-            div:nth-child(3n) {
-              width: 70%;
+            .reset {
+              width: 10px;
+              height: 100%;
+              padding: 0 12px;
+
+              word-break: break-word;
+              line-height: 14px;
+
+              transform: translateX(-150%);
+            }
+
+            .remove,
+            .add {
+              width: 35%;
+              height: 50%;
+              transform: translateX(100%);
             }
 
             .add:hover {
@@ -74,6 +89,12 @@
 
             .remove:hover {
               background-color: rgb(211, 75, 75);
+            }
+
+            .reset:hover {
+              background-color: white;
+              color: black;
+              font-weight: 700;
             }
           }
         }
