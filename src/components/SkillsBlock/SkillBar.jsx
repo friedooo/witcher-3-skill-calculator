@@ -95,7 +95,7 @@ function SkillBar() {
         {SignsArr.map((signSkill) => {
           return (
             <div className="skill">
-              <SkillHoc counter points={0}>
+              <SkillHoc class="signs" counter points={0}>
                 <PointButton />
                 {signSkill}
               </SkillHoc>
