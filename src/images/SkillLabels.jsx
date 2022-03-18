@@ -3,9 +3,10 @@ import React from "react";
 function CombatSkills() {
   return (
     <svg
+      className="combat"
       width="65"
       height="64"
-      viewBox="0 0 65 64"
+      viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -22,6 +23,7 @@ function CombatSkills() {
 function Signs() {
   return (
     <svg
+      className="signs"
       width="64"
       height="64"
       viewBox="0 0 64 64"
@@ -41,6 +43,7 @@ function Signs() {
 function AlchemySkills() {
   return (
     <svg
+      className="alchemy"
       width="64"
       height="64"
       viewBox="0 0 64 64"
@@ -60,6 +63,7 @@ function AlchemySkills() {
 function GeneralSkills() {
   return (
     <svg
+      className="general"
       width="64"
       height="64"
       viewBox="0 0 64 64"
@@ -79,6 +83,7 @@ function GeneralSkills() {
 function Mutagens() {
   return (
     <svg
+      className="mutagens"
       width="63"
       height="64"
       viewBox="0 0 63 64"

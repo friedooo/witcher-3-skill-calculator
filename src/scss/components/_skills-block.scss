@@ -104,9 +104,33 @@
           height: 100%;
         }
 
-        svg:hover {
+        .combat:hover {
           path {
             fill: #a70d0d;
+          }
+        }
+
+        .signs:hover {
+          path {
+            fill: rgb(11, 100, 167);
+          }
+        }
+
+        .alchemy:hover {
+          path {
+            fill: rgb(6, 53, 19);
+          }
+        }
+
+        .general:hover {
+          path {
+            fill: rgb(165, 103, 19);
+          }
+        }
+
+        .mutagens:hover {
+          path {
+            fill: rgb(30, 200, 206);
           }
         }
 

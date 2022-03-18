@@ -6,7 +6,7 @@ import { combat, signs, alchemy } from "../../db";
 
 const skillsState = {
   branches: ["Фехтование", "Знаки", "Алхимия", "Умения", "Мутагены"],
-  showPointsinRow: [false, true, true, true, true],
+  showPointsInRow: [false, true, true, true, true],
   combat: combat,
   signs: signs,
   alchemy: alchemy,
