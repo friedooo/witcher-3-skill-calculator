@@ -42,6 +42,7 @@ import SkillHoc from "../../hoc/SkillHoc";
 import SkillLabelsArr from "../../images/SkillLabels";
 import CombatArr from "../../images/Combat";
 import SignsArr from "../../images/SIgns";
+import AlchemyArr from "../../images/Alchemy";
 import PointButton from "./PointButton";
 
 import {
@@ -92,12 +93,23 @@ function SkillBar() {
           );
         })} */}
 
-        {SignsArr.map((signSkill) => {
+        {/* {SignsArr.map((signSkill) => {
           return (
             <div className="skill">
               <SkillHoc class="signs" counter points={0}>
                 <PointButton />
                 {signSkill}
+              </SkillHoc>
+            </div>
+          );
+        })} */}
+
+        {AlchemyArr.map((alchemySkill) => {
+          return (
+            <div className="skill">
+              <SkillHoc class="alchemy" counter points={0}>
+                <PointButton />
+                {alchemySkill}
               </SkillHoc>
             </div>
           );
