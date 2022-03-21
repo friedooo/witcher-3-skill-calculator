@@ -49,10 +49,18 @@ import {
   plusSkillPoint,
   minusSkillPoint,
   clearSkill,
+  switchBranch,
 } from "../../redux/actions/skills_a";
 
 function SkillBar() {
+  const skillsObj = {
+    combat: CombatArr,
+    signs: SignsArr,
+    alchemy: AlchemyArr,
+  };
+
   const skills = useSelector(({ skills }) => skills);
+  const activeBranch = useSelector(({ skills }) => skills.activeBranch);
   const dispatch = useDispatch();
 
   const onPlusPoint = () => {
@@ -65,16 +73,22 @@ function SkillBar() {
     dispatch(clearSkill("combat", 1, "Muscle Memory"));
   };
 
+  const onSwitchBranch = (branch) => {
+    dispatch(switchBranch(branch));
+  };
+
   return (
     <div className="skill-bar">
       {/* <button onClick={onPlusPoint}>+</button>
       <button onClick={onMinusPoint}>-</button>
       <button onClick={onClearSkill}>clear</button> */}
       <div className="content">
-        {SkillLabelsArr.map((labelSkill) => {
+        {SkillLabelsArr.map(({ skillName, skillComponent }) => {
           return (
             <div className="skill">
-              <SkillHoc>{labelSkill}</SkillHoc>
+              <SkillHoc onClick={() => onSwitchBranch(skillName)}>
+                {skillComponent}
+              </SkillHoc>
             </div>
           );
         })}
@@ -82,34 +96,12 @@ function SkillBar() {
           <span>Умения</span>
           <span>Очков потрачено: 1</span>
         </div>
-        {/* {CombatArr.map((combatSkill) => {
+        {skillsObj[activeBranch].map((skill) => {
           return (
             <div className="skill">
-              <SkillHoc counter points={0}>
+              <SkillHoc class={activeBranch} counter points={0}>
                 <PointButton />
-                {combatSkill}
-              </SkillHoc>
-            </div>
-          );
-        })} */}
-
-        {/* {SignsArr.map((signSkill) => {
-          return (
-            <div className="skill">
-              <SkillHoc class="signs" counter points={0}>
-                <PointButton />
-                {signSkill}
-              </SkillHoc>
-            </div>
-          );
-        })} */}
-
-        {AlchemyArr.map((alchemySkill) => {
-          return (
-            <div className="skill">
-              <SkillHoc class="alchemy" counter points={0}>
-                <PointButton />
-                {alchemySkill}
+                {skill}
               </SkillHoc>
             </div>
           );

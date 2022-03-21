@@ -18,3 +18,8 @@ export const clearSkill = (branch, row, skill) => ({
   row,
   skill,
 });
+
+export const switchBranch = (branch) => ({
+  type: "SWITCH_BRANCH",
+  branch,
+});

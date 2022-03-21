@@ -5,8 +5,9 @@ import { current } from "immer";
 import { combat, signs, alchemy } from "../../db";
 
 const skillsState = {
-  branches: ["Фехтование", "Знаки", "Алхимия", "Умения", "Мутагены"],
+  branches: ["combat", "signs", "alchemy", "general", "mutagens"],
   showPointsInRow: [false, true, true, true, true],
+  activeBranch: "combat",
   combat: combat,
   signs: signs,
   alchemy: alchemy,
@@ -27,6 +28,9 @@ const skills = (state = skillsState, action) =>
     }
     if (action.type === "CLEAR_SKILL") {
       draft[action.branch][action.row][action.skill].points = 0;
+    }
+    if (action.type === "SWITCH_BRANCH") {
+      draft.activeBranch = action.branch;
     }
   });
 

@@ -101,11 +101,26 @@ function Mutagens() {
 }
 
 const SkillLabelsArr = [
-  <CombatSkills />,
-  <Signs />,
-  <AlchemySkills />,
-  <GeneralSkills />,
-  <Mutagens />,
+  {
+    skillName: "combat",
+    skillComponent: <CombatSkills />,
+  },
+  {
+    skillName: "signs",
+    skillComponent: <Signs />,
+  },
+  {
+    skillName: "alchemy",
+    skillComponent: <AlchemySkills />,
+  },
+  {
+    skillName: "general",
+    skillComponent: <GeneralSkills />,
+  },
+  {
+    skillName: "mutagens",
+    skillComponent: <Mutagens />,
+  },
 ];
 
 //export { CombatSkills, Signs, AlchemySkills, GeneralSkills, Mutagens };
