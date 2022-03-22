@@ -476,31 +476,106 @@ function FloodOfAnger() {
 }
 
 const CombatArr = [
-  <FastAttack />,
-  <StrongAttack />,
-  <Defense />,
-  <Marksmanship />,
-  <BattleTrance />,
-  <MuscleMemory />,
-  <StrengthTraining />,
-  <ArrowDeflection />,
-  <LightningReflexes />,
-  <Resolve />,
-  <PreciseBlows />,
-  <CrushingBlows />,
-  <FleetFooted />,
-  <ColdBlood />,
-  <Undying />,
-  <Whirl />,
-  <Rend />,
-  <Counterattack />,
-  <AnatomicalKnowledge />,
-  <RazorFocus />,
-  <CripplingStrikes />,
-  <SunderArmor />,
-  <DeadlyPrecision />,
-  <CripplingShot />,
-  <FloodOfAnger />,
+  {
+    skillName: "Fast Attack",
+    skillComponent: <FastAttack />,
+  },
+  {
+    skillName: "Strong Attack",
+    skillComponent: <StrongAttack />,
+  },
+  {
+    skillName: "Defense",
+    skillComponent: <Defense />,
+  },
+  {
+    skillName: "Marksmanship",
+    skillComponent: <Marksmanship />,
+  },
+  {
+    skillName: "Battle Trance",
+    skillComponent: <BattleTrance />,
+  },
+  {
+    skillName: "Muscle Memory",
+    skillComponent: <MuscleMemory />,
+  },
+  {
+    skillName: "Strength Training",
+    skillComponent: <StrengthTraining />,
+  },
+  {
+    skillName: "Arrow Deflection",
+    skillComponent: <ArrowDeflection />,
+  },
+  {
+    skillName: "Lightning Reflexes",
+    skillComponent: <LightningReflexes />,
+  },
+  {
+    skillName: "Resolve",
+    skillComponent: <Resolve />,
+  },
+  {
+    skillName: "Precise Blows",
+    skillComponent: <PreciseBlows />,
+  },
+  {
+    skillName: "Crushing Blows",
+    skillComponent: <CrushingBlows />,
+  },
+  {
+    skillName: "Fleet Footed",
+    skillComponent: <FleetFooted />,
+  },
+  {
+    skillName: "Cold Blood",
+    skillComponent: <ColdBlood />,
+  },
+  {
+    skillName: "Undying",
+    skillComponent: <Undying />,
+  },
+  {
+    skillName: "Whirl",
+    skillComponent: <Whirl />,
+  },
+  {
+    skillName: "Rend",
+    skillComponent: <Rend />,
+  },
+  {
+    skillName: "Counterattack",
+    skillComponent: <Counterattack />,
+  },
+  {
+    skillName: "Anatomical Knowledge",
+    skillComponent: <AnatomicalKnowledge />,
+  },
+  {
+    skillName: "Razor Focus",
+    skillComponent: <RazorFocus />,
+  },
+  {
+    skillName: "Crippling Strikes",
+    skillComponent: <CripplingStrikes />,
+  },
+  {
+    skillName: "Sunder Armor",
+    skillComponent: <SunderArmor />,
+  },
+  {
+    skillName: "Deadly Precision",
+    skillComponent: <DeadlyPrecision />,
+  },
+  {
+    skillName: "Crippling Shot",
+    skillComponent: <CripplingShot />,
+  },
+  {
+    skillName: "Flood of Anger",
+    skillComponent: <FloodOfAnger />,
+  },
 ];
 
 // export {

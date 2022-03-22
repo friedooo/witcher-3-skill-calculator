@@ -1,10 +1,12 @@
 import React from "react";
 
-function PointButton() {
+function PointButton(props) {
   return (
     <div className="point-btn">
       <div className="reset">Reset</div>
-      <div className="add">+</div>
+      <div onClick={props.onClick} className="add">
+        +
+      </div>
       <div className="remove">-</div>
     </div>
   );

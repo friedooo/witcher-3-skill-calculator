@@ -11,7 +11,7 @@ const skillsState = {
   combat: combat,
   signs: signs,
   alchemy: alchemy,
-  generalSkill: {},
+  general: {},
   mutagens: {},
 };
 

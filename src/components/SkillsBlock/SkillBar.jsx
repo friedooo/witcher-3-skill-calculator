@@ -59,12 +59,12 @@ function SkillBar() {
     alchemy: AlchemyArr,
   };
 
-  const skills = useSelector(({ skills }) => skills);
+  const skillsStore = useSelector(({ skills }) => skills);
   const activeBranch = useSelector(({ skills }) => skills.activeBranch);
   const dispatch = useDispatch();
 
-  const onPlusPoint = () => {
-    dispatch(plusSkillPoint("combat", 1, "Muscle Memory"));
+  const onPlusPoint = (branch, row, skill) => {
+    dispatch(plusSkillPoint(branch, row, skill));
   };
   const onMinusPoint = () => {
     dispatch(minusSkillPoint("combat", 1, "Muscle Memory"));
@@ -96,12 +96,19 @@ function SkillBar() {
           <span>Умения</span>
           <span>Очков потрачено: 1</span>
         </div>
-        {skillsObj[activeBranch].map((skill) => {
+        {skillsObj[activeBranch].map((skill, i) => {
+          const row = Math.floor(i / 5);
+          const points =
+            skillsStore[activeBranch][row][skill.skillName]["points"];
           return (
             <div className="skill">
-              <SkillHoc class={activeBranch} counter points={0}>
-                <PointButton />
-                {skill}
+              <SkillHoc class={activeBranch} counter points={points}>
+                <PointButton
+                  onClick={() =>
+                    onPlusPoint(activeBranch, row, skill.skillName)
+                  }
+                />
+                {skill.skillComponent}
               </SkillHoc>
             </div>
           );
