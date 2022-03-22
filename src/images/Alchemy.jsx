@@ -362,25 +362,82 @@ function Synergy() {
 }
 
 const AlchemyArr = [
-  <Brewing />,
-  <OilPreparation />,
-  <BombCreation />,
-  <Mutation />,
-  <TrialOfTheGrasses />,
-  <HeightenedTolerance />,
-  <PoisonedBlades />,
-  <SteadyAim />,
-  <AcquiredTolerance />,
-  <Frenzy />,
-  <Refreshment />,
-  <ProtectiveCoating />,
-  <Pyrotechnics />,
-  <TissueTransmutation />,
-  <EndurePain />,
-  <DelayedRecovery />,
-  <Fixative />,
-  <Efficiency />,
-  <Synergy />,
+  {
+    skillName: "Brewing",
+    skillComponent: <Brewing />,
+  },
+  {
+    skillName: "Oil Preparation",
+    skillComponent: <OilPreparation />,
+  },
+  {
+    skillName: "Bomb Creation",
+    skillComponent: <BombCreation />,
+  },
+  {
+    skillName: "Mutation",
+    skillComponent: <Mutation />,
+  },
+  {
+    skillName: "Trial of the Grasses",
+    skillComponent: <TrialOfTheGrasses />,
+  },
+  {
+    skillName: "Heightened Tolerance",
+    skillComponent: <HeightenedTolerance />,
+  },
+  {
+    skillName: "Poisoned Blades",
+    skillComponent: <PoisonedBlades />,
+  },
+  {
+    skillName: "Steady Aim",
+    skillComponent: <SteadyAim />,
+  },
+  {
+    skillName: "Acquired Tolerance",
+    skillComponent: <AcquiredTolerance />,
+  },
+  {
+    skillName: "Frenzy",
+    skillComponent: <Frenzy />,
+  },
+  {
+    skillName: "Refreshment",
+    skillComponent: <Refreshment />,
+  },
+  {
+    skillName: "Protective Coating",
+    skillComponent: <ProtectiveCoating />,
+  },
+  {
+    skillName: "Pyrotechnics",
+    skillComponent: <Pyrotechnics />,
+  },
+  {
+    skillName: "Tissue Transmutation",
+    skillComponent: <TissueTransmutation />,
+  },
+  {
+    skillName: "Endure Pain",
+    skillComponent: <EndurePain />,
+  },
+  {
+    skillName: "Delayed Recovery",
+    skillComponent: <DelayedRecovery />,
+  },
+  {
+    skillName: "Fixative",
+    skillComponent: <Fixative />,
+  },
+  {
+    skillName: "Efficiency",
+    skillComponent: <Efficiency />,
+  },
+  {
+    skillName: "Synergy",
+    skillComponent: <Synergy />,
+  },
 ];
 
 export default AlchemyArr;

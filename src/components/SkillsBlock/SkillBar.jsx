@@ -3,42 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 import SkillHoc from "../../hoc/SkillHoc";
 
-// import {
-//   CombatSkills,
-//   Signs,
-//   AlchemySkills,
-//   GeneralSkills,
-//   Mutagens,
-// } from "../../images/SkillLabels";
-
-// import {
-//   FastAttack,
-//   StrongAttack,
-//   Defense,
-//   Marksmanship,
-//   BattleTrance,
-//   MuscleMemory,
-//   StrengthTraining,
-//   ArrowDeflection,
-//   LightningReflexes,
-//   Resolve,
-//   PreciseBlows,
-//   CrushingBlows,
-//   FleetFooted,
-//   ColdBlood,
-//   Undying,
-//   Whirl,
-//   Rend,
-//   Counterattack,
-//   AnatomicalKnowledge,
-//   RazorFocus,
-//   CripplingStrikes,
-//   SunderArmor,
-//   DeadlyPrecision,
-//   CripplingShot,
-//   FloodOfAnger,
-// } from "../../images/Combat";
-
 import SkillLabelsArr from "../../images/SkillLabels";
 import CombatArr from "../../images/Combat";
 import SignsArr from "../../images/SIgns";
@@ -60,6 +24,7 @@ function SkillBar() {
   };
 
   const skillsStore = useSelector(({ skills }) => skills);
+  console.log(skillsStore);
   const activeBranch = useSelector(({ skills }) => skills.activeBranch);
   const dispatch = useDispatch();
 
@@ -100,8 +65,9 @@ function SkillBar() {
           const row = Math.floor(i / 5);
           const points =
             skillsStore[activeBranch][row][skill.skillName]["points"];
+
           return (
-            <div className="skill">
+            <div className="skill" key={i}>
               <SkillHoc class={activeBranch} counter points={points}>
                 <PointButton
                   onClick={() =>

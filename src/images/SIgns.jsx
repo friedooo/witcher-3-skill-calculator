@@ -56,7 +56,7 @@ function Yrden() {
   );
 }
 
-function Qven() {
+function Quen() {
   return (
     <svg
       width="64"
@@ -475,31 +475,106 @@ function Domination() {
 }
 
 const SignsArr = [
-  <Aard />,
-  <Igni />,
-  <Yrden />,
-  <Qven />,
-  <Axii />,
-  <FarReachingArd />,
-  <MeltArmor />,
-  <SustainedGlyphs />,
-  <ExplodingShield />,
-  <Delusion />,
-  <AardSweep />,
-  <Firestream />,
-  <MagicTrap />,
-  <ActiveShield />,
-  <Puppet />,
-  <AardIntensity />,
-  <IgniIntensity />,
-  <YrdenIntensity />,
-  <QuenIntensity />,
-  <AxiiIntensity />,
-  <ShockWave />,
-  <Pyromaniac />,
-  <SuperchargedGlyphs />,
-  <QuenDischarge />,
-  <Domination />,
+  {
+    skillName: "Aard",
+    skillComponent: <Aard />,
+  },
+  {
+    skillName: "Igni",
+    skillComponent: <Igni />,
+  },
+  {
+    skillName: "Yrden",
+    skillComponent: <Yrden />,
+  },
+  {
+    skillName: "Quen",
+    skillComponent: <Quen />,
+  },
+  {
+    skillName: "Axii",
+    skillComponent: <Axii />,
+  },
+  {
+    skillName: "Far-Reaching Aard",
+    skillComponent: <FarReachingArd />,
+  },
+  {
+    skillName: "Melt Armor",
+    skillComponent: <MeltArmor />,
+  },
+  {
+    skillName: "Sustained Glyphs",
+    skillComponent: <SustainedGlyphs />,
+  },
+  {
+    skillName: "Exploding Shield",
+    skillComponent: <ExplodingShield />,
+  },
+  {
+    skillName: "Delusion",
+    skillComponent: <Delusion />,
+  },
+  {
+    skillName: "Aard Sweep",
+    skillComponent: <AardSweep />,
+  },
+  {
+    skillName: "Firestream",
+    skillComponent: <Firestream />,
+  },
+  {
+    skillName: "Magic Trap",
+    skillComponent: <MagicTrap />,
+  },
+  {
+    skillName: "Active Shield",
+    skillComponent: <ActiveShield />,
+  },
+  {
+    skillName: "Puppet",
+    skillComponent: <Puppet />,
+  },
+  {
+    skillName: "Aard Intensity",
+    skillComponent: <AardIntensity />,
+  },
+  {
+    skillName: "Igni Intensity",
+    skillComponent: <IgniIntensity />,
+  },
+  {
+    skillName: "Yrden Intensity",
+    skillComponent: <YrdenIntensity />,
+  },
+  {
+    skillName: "Quen Intensity",
+    skillComponent: <QuenIntensity />,
+  },
+  {
+    skillName: "Axii Intensity",
+    skillComponent: <AxiiIntensity />,
+  },
+  {
+    skillName: "Shock Wave",
+    skillComponent: <ShockWave />,
+  },
+  {
+    skillName: "Pyromaniac",
+    skillComponent: <Pyromaniac />,
+  },
+  {
+    skillName: "Supercharged Glyphs",
+    skillComponent: <SuperchargedGlyphs />,
+  },
+  {
+    skillName: "Quen Discharge",
+    skillComponent: <QuenDischarge />,
+  },
+  {
+    skillName: "Domination",
+    skillComponent: <Domination />,
+  },
 ];
 
 export default SignsArr;
