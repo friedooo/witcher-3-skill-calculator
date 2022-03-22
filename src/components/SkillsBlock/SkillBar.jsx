@@ -67,9 +67,9 @@ function SkillBar() {
       <button onClick={onMinusPoint}>-</button>
       <button onClick={onClearSkill}>clear</button> */}
       <div className="content">
-        {SkillLabelsArr.map(({ skillName, skillComponent }) => {
+        {SkillLabelsArr.map(({ skillName, skillComponent }, i) => {
           return (
-            <div className="skill">
+            <div className="skill" key={i}>
               <SkillHoc onClick={() => onSwitchBranch(skillName)}>
                 {skillComponent}
               </SkillHoc>
