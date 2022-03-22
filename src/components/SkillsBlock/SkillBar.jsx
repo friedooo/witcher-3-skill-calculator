@@ -24,23 +24,42 @@ function SkillBar() {
   };
 
   const skillsStore = useSelector(({ skills }) => skills);
-  console.log(skillsStore);
   const activeBranch = useSelector(({ skills }) => skills.activeBranch);
   const dispatch = useDispatch();
 
-  const onPlusPoint = (branch, row, skill) => {
-    dispatch(plusSkillPoint(branch, row, skill));
-  };
-  const onMinusPoint = () => {
-    dispatch(minusSkillPoint("combat", 1, "Muscle Memory"));
-  };
-  const onClearSkill = () => {
-    dispatch(clearSkill("combat", 1, "Muscle Memory"));
-  };
+  // const onPlusPoint = (branch, row, skill) => {
+  //   dispatch(plusSkillPoint(branch, row, skill));
+  // };
+  // const onMinusPoint = (branch, row, skill) => {
+  //   dispatch(minusSkillPoint(branch, row, skill));
+  // };
+  // const onClearSkill = (branch, row, skill) => {
+  //   dispatch(clearSkill(branch, row, skill));
+  // };
 
   const onSwitchBranch = (branch) => {
     dispatch(switchBranch(branch));
   };
+
+  class ButtonEvents {
+    constructor(branch, row, skill) {
+      this.branch = branch;
+      this.row = row;
+      this.skill = skill;
+    }
+
+    plusPoint() {
+      dispatch(plusSkillPoint(this.branch, this.row, this.skill));
+    }
+
+    minusPoint() {
+      dispatch(minusSkillPoint(this.branch, this.row, this.skill));
+    }
+
+    clearSkill() {
+      dispatch(clearSkill(this.branch, this.row, this.skill));
+    }
+  }
 
   return (
     <div className="skill-bar">
@@ -70,9 +89,7 @@ function SkillBar() {
             <div className="skill" key={i}>
               <SkillHoc class={activeBranch} counter points={points}>
                 <PointButton
-                  onClick={() =>
-                    onPlusPoint(activeBranch, row, skill.skillName)
-                  }
+                  onClick={new ButtonEvents(activeBranch, row, skill.skillName)}
                 />
                 {skill.skillComponent}
               </SkillHoc>
