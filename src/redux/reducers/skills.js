@@ -6,7 +6,7 @@ import { combat, signs, alchemy } from "../../db";
 
 const skillsState = {
   branches: ["combat", "signs", "alchemy", "general", "mutagens"],
-  showPointsInRow: [false, true, true, true, true],
+  showButtonsInRow: [false, true, true, true, true],
   activeBranch: "combat",
   combat: combat,
   signs: signs,
@@ -21,10 +21,18 @@ const skills = (state = skillsState, action) =>
       draft.isLoaded = action.payload;
     }
     if (action.type === "PLUS_SKILL_POINT") {
-      draft[action.branch][action.row][action.skill].points += 1;
+      let points = draft[action.branch][action.row][action.skill].points;
+      const pointsLimit =
+        draft[action.branch][action.row][action.skill].pointsLimit;
+      if (points < pointsLimit) {
+        draft[action.branch][action.row][action.skill].points += 1;
+      }
     }
     if (action.type === "MINUS_SKILL_POINT") {
-      draft[action.branch][action.row][action.skill].points -= 1;
+      let points = draft[action.branch][action.row][action.skill].points;
+      if (points > 0) {
+        draft[action.branch][action.row][action.skill].points -= 1;
+      }
     }
     if (action.type === "CLEAR_SKILL") {
       draft[action.branch][action.row][action.skill].points = 0;

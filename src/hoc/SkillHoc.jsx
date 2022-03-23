@@ -4,7 +4,11 @@ function SkillHoc(props) {
   return (
     <div onClick={props.onClick} className={props.class ? props.class : null}>
       {props.children}
-      {props.counter ? <div className="counter">{props.points}</div> : null}
+      {props.counter ? (
+        <div className="counter">
+          {props.points}/{props.pointsLimit}
+        </div>
+      ) : null}
     </div>
   );
 }
