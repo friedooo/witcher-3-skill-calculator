@@ -7,6 +7,12 @@ import { combat, signs, alchemy } from "../../db";
 const skillsState = {
   branches: ["combat", "signs", "alchemy", "general", "mutagens"],
   showButtonsInRow: [false, true, true, true, true],
+  disabledRows: {
+    combat: [false, false, true, true, true],
+    signs: [false, false, true, true, true],
+    alchemy: [false, false, true, true, true],
+    general: [false, false, false, false, false],
+  },
   activeBranch: "combat",
   combat: combat,
   signs: signs,

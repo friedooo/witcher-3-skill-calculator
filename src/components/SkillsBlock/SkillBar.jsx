@@ -26,6 +26,7 @@ function SkillBar() {
   const skillsStore = useSelector(({ skills }) => skills);
   const activeBranch = useSelector(({ skills }) => skills.activeBranch);
   const showButtonsInRow = useSelector(({ skills }) => skills.showButtonsInRow);
+  const disabledRows = useSelector(({ skills }) => skills.disabledRows);
   const dispatch = useDispatch();
 
   const onSwitchBranch = (branch) => {
@@ -60,7 +61,7 @@ function SkillBar() {
       <div className="content">
         {SkillLabelsArr.map(({ skillName, skillComponent }, i) => {
           return (
-            <div className="skill disabled-skill" key={i}>
+            <div className="skill" key={i}>
               <SkillHoc onClick={() => onSwitchBranch(skillName)}>
                 {skillComponent}
               </SkillHoc>
@@ -78,7 +79,12 @@ function SkillBar() {
           const pointsLimit =
             skillsStore[activeBranch][row][skill.skillName]["pointsLimit"];
           return (
-            <div className="skill" key={i}>
+            <div
+              className={`skill ${
+                disabledRows[activeBranch][row] ? "disabled-skill" : null
+              }`}
+              key={i}
+            >
               <SkillHoc
                 class={activeBranch}
                 counter
