@@ -12,13 +12,13 @@ const skillsState = {
     alchemy: ["constant", "editable", "disabled", "disabled", "disabled"],
     general: ["editable", "editable", "editable", "editable"],
   },
-  requiredPoints: {
+  pointsToUnlockRow: {
     combat: [0, 0, 8, 20, 30],
     signs: [0, 0, 6, 18, 28],
     alchemy: [0, 0, 8, 20, 28],
     general: [0, 0, 0, 0],
   },
-  pointSpentInBranch: {
+  spentPoints: {
     combat: 0,
     signs: 0,
     alchemy: 0,
@@ -42,16 +42,21 @@ const skills = (state = skillsState, action) =>
       const pointsLimit =
         draft[action.branch][action.row][action.skill].pointsLimit;
       if (points < pointsLimit) {
+        draft["spentPoints"][action.branch] += 1;
         draft[action.branch][action.row][action.skill].points += 1;
       }
     }
     if (action.type === "MINUS_SKILL_POINT") {
       let points = draft[action.branch][action.row][action.skill].points;
       if (points > 0) {
+        draft["spentPoints"][action.branch] -= 1;
         draft[action.branch][action.row][action.skill].points -= 1;
       }
     }
     if (action.type === "CLEAR_SKILL") {
+      draft["spentPoints"][action.branch] -=
+        draft[action.branch][action.row][action.skill].points;
+
       draft[action.branch][action.row][action.skill].points = 0;
     }
     if (action.type === "SWITCH_BRANCH") {

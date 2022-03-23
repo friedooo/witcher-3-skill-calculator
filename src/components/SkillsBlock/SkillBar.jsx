@@ -14,6 +14,7 @@ import {
   minusSkillPoint,
   clearSkill,
   switchBranch,
+  addSpentPoint,
 } from "../../redux/actions/skills_a";
 
 function SkillBar() {
