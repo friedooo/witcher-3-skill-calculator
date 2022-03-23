@@ -25,8 +25,7 @@ function SkillBar() {
 
   const skillsStore = useSelector(({ skills }) => skills);
   const activeBranch = useSelector(({ skills }) => skills.activeBranch);
-  const showButtonsInRow = useSelector(({ skills }) => skills.showButtonsInRow);
-  const disabledRows = useSelector(({ skills }) => skills.disabledRows);
+  const rowStates = useSelector(({ skills }) => skills.rowStates);
   const dispatch = useDispatch();
 
   const onSwitchBranch = (branch) => {
@@ -81,7 +80,9 @@ function SkillBar() {
           return (
             <div
               className={`skill ${
-                disabledRows[activeBranch][row] ? "disabled-skill" : null
+                rowStates[activeBranch][row] === "disabled"
+                  ? "disabled-skill"
+                  : null
               }`}
               key={i}
             >
@@ -93,7 +94,7 @@ function SkillBar() {
                 points={points}
                 pointsLimit={pointsLimit}
               >
-                {showButtonsInRow[row] ? (
+                {rowStates[activeBranch][row] === "editable" ? (
                   <PointButton
                     onClick={
                       new ButtonEvents(activeBranch, row, skill.skillName)

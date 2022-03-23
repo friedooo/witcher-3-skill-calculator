@@ -6,12 +6,11 @@ import { combat, signs, alchemy } from "../../db";
 
 const skillsState = {
   branches: ["combat", "signs", "alchemy", "general", "mutagens"],
-  showButtonsInRow: [false, true, true, true, true],
-  disabledRows: {
-    combat: [false, false, true, true, true],
-    signs: [false, false, true, true, true],
-    alchemy: [false, false, true, true, true],
-    general: [false, false, false, false, false],
+  rowStates: {
+    combat: ["constant", "editable", "disabled", "disabled", "disabled"],
+    signs: ["constant", "editable", "disabled", "disabled", "disabled"],
+    alchemy: ["constant", "editable", "disabled", "disabled", "disabled"],
+    general: ["editable", "editable", "editable", "editable", "editable"],
   },
   activeBranch: "combat",
   combat: combat,

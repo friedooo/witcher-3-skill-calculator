@@ -31,8 +31,8 @@
       }
 
       .disabled-skill.skill {
-        transform: scale(0.8);
-        pointer-events: none;
+        transform: scale(0.7);
+        outline: 5px solid black;
       }
 
       .skill {
