@@ -86,6 +86,8 @@ function SkillBar() {
               key={i}
             >
               <SkillHoc
+                // не забудь, описание скилов должно быть показано и для disabled скилов!
+                // хз как это сделать пока что
                 class={activeBranch}
                 counter
                 points={points}
