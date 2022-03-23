@@ -60,7 +60,7 @@ function SkillBar() {
       <div className="content">
         {SkillLabelsArr.map(({ skillName, skillComponent }, i) => {
           return (
-            <div className="skill" key={i}>
+            <div className="skill disabled-skill" key={i}>
               <SkillHoc onClick={() => onSwitchBranch(skillName)}>
                 {skillComponent}
               </SkillHoc>
