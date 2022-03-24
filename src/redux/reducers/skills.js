@@ -34,6 +34,18 @@ const skillsState = {
 
 const skills = (state = skillsState, action) =>
   produce(state, (draft) => {
+    function addSpentPoint(branch) {
+      draft["spentPoints"][branch] += 1;
+    }
+
+    function removeSpentPoint(branch) {
+      draft["spentPoints"][branch] -= 1;
+    }
+
+    function clearSpentPoint(branch, value) {
+      draft["spentPoints"][branch] -= value;
+    }
+
     if (action.type === "SET_LOADED") {
       draft.isLoaded = action.payload;
     }
@@ -42,21 +54,22 @@ const skills = (state = skillsState, action) =>
       const pointsLimit =
         draft[action.branch][action.row][action.skill].pointsLimit;
       if (points < pointsLimit) {
-        draft["spentPoints"][action.branch] += 1;
+        addSpentPoint(action.branch);
         draft[action.branch][action.row][action.skill].points += 1;
       }
     }
     if (action.type === "MINUS_SKILL_POINT") {
       let points = draft[action.branch][action.row][action.skill].points;
       if (points > 0) {
-        draft["spentPoints"][action.branch] -= 1;
+        removeSpentPoint(action.branch);
         draft[action.branch][action.row][action.skill].points -= 1;
       }
     }
     if (action.type === "CLEAR_SKILL") {
-      draft["spentPoints"][action.branch] -=
-        draft[action.branch][action.row][action.skill].points;
-
+      clearSpentPoint(
+        action.branch,
+        draft[action.branch][action.row][action.skill].points
+      );
       draft[action.branch][action.row][action.skill].points = 0;
     }
     if (action.type === "SWITCH_BRANCH") {
