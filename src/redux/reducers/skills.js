@@ -46,6 +46,16 @@ const skills = (state = skillsState, action) =>
       draft["spentPoints"][branch] -= value;
     }
 
+    function checkRowToUnlock(branch) {
+      draft["pointsToUnlockRow"][branch].forEach((points, i) => {
+        if (i > 1) {
+          if (draft["spentPoints"][branch] >= points) {
+            draft["rowStates"][branch][i] = "editable";
+          }
+        }
+      });
+    }
+
     if (action.type === "SET_LOADED") {
       draft.isLoaded = action.payload;
     }
@@ -55,6 +65,7 @@ const skills = (state = skillsState, action) =>
         draft[action.branch][action.row][action.skill].pointsLimit;
       if (points < pointsLimit) {
         addSpentPoint(action.branch);
+        checkRowToUnlock(action.branch);
         draft[action.branch][action.row][action.skill].points += 1;
       }
     }
