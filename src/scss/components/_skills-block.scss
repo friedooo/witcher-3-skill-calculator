@@ -1,7 +1,7 @@
 .skills-block {
-  width: 40%;
+  width: 45%;
   display: flex;
-  flex-direction: column;
+
   justify-content: space-between;
 
   border: 1px solid red;
@@ -9,7 +9,8 @@
   .skill-bar {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     margin-top: 15%;
 
     .content {
@@ -159,13 +160,13 @@
 
   .avaliable-skills {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: 10%;
+    align-items: center;
+    margin: 0 5%;
+    padding: 3% 0;
+    border: 1px solid rgb(134, 134, 165);
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    text-transform: uppercase;
   }
 }

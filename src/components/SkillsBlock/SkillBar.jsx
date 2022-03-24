@@ -8,6 +8,7 @@ import CombatArr from "../../images/Combat";
 import SignsArr from "../../images/SIgns";
 import AlchemyArr from "../../images/Alchemy";
 import PointButton from "./PointButton";
+import AvailableSkills from "./AvailableSkills";
 
 import {
   plusSkillPoint,
@@ -55,9 +56,6 @@ function SkillBar() {
 
   return (
     <div className="skill-bar">
-      {/* <button onClick={onPlusPoint}>+</button>
-      <button onClick={onMinusPoint}>-</button>
-      <button onClick={onClearSkill}>clear</button> */}
       <div className="content">
         {SkillLabelsArr.map(({ skillName, skillComponent }, i) => {
           return (
@@ -109,6 +107,7 @@ function SkillBar() {
           );
         })}
       </div>
+      <AvailableSkills />
     </div>
   );
 }

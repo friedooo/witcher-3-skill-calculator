@@ -1,12 +1,12 @@
 import React from "react";
 import SkillBar from "./SkillBar";
-import AvailableSkills from "./AvailableSkills";
+import LockBar from "./LockBar";
 
 function SkillsBlock() {
   return (
     <div className="skills-block">
       <SkillBar />
-      <AvailableSkills />
+      {/* <LockBar /> */}
     </div>
   );
 }
