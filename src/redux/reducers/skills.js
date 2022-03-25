@@ -13,13 +13,13 @@ const skillsState = {
     general: ["editable", "editable", "editable", "editable"],
   },
   pointsToUnlockRow: {
-    combat: [0, 0, 8, 20, 30],
+    combat: [0, 0, 8, 20, 30], // закину этот стейт в rowStates, буду делать один большой стейт
     signs: [0, 0, 6, 18, 28],
     alchemy: [0, 0, 8, 20, 28],
     general: [0, 0, 0, 0],
   },
   spentPoints: {
-    combat: 0,
+    combat: 0, // [0, 0, 0, 0, 0]
     signs: 0,
     alchemy: 0,
     general: 0,
