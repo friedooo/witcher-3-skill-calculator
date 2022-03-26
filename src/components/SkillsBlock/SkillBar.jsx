@@ -79,7 +79,7 @@ function SkillBar() {
           return (
             <div
               className={`skill ${
-                rowStates[activeBranch][row] === "disabled"
+                rowStates[activeBranch][row]["mode"] === "disabled"
                   ? "disabled-skill"
                   : null
               }`}
@@ -93,7 +93,7 @@ function SkillBar() {
                 points={points}
                 pointsLimit={pointsLimit}
               >
-                {rowStates[activeBranch][row] === "editable" ? (
+                {rowStates[activeBranch][row]["mode"] === "editable" ? (
                   <PointButton
                     onClick={
                       new ButtonEvents(activeBranch, row, skill.skillName)
