@@ -19,7 +19,8 @@ const skillsState = {
     general: [0, 0, 0, 0],
   },
   spentPoints: {
-    combat: 0, // [0, 0, 0, 0, 0]
+    combat: 0, // [0, 0, 0, 0, 0], НО СДЕЛАТЬ ЕЩЕ ОТДЕЛЬНЫЙ СТЕЙТ ВНУТРИ rowStates аля TotalSpentInBranch,
+    // Для функции checkRowToUnlock
     signs: 0,
     alchemy: 0,
     general: 0,
