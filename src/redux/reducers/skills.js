@@ -45,7 +45,10 @@ const skillsState = {
 
 const skills = (state = skillsState, action) =>
   produce(state, (draft) => {
-    //////////////////////// akku
+    // ПОТОМ МОЖНО ОБЪЕДИНИТЬ plusAkku С minusAkku
+    // НУЖНО ВЫНЕСТИ ЭТИ ФУНКЦИИ ЗА ПРЕДЕЛЫ IMMER, А ТО ОНИ КАЖДЫЙ
+    // РАЗ ОБЪЯВЛЯЮТСЯ - ВОЗМОЖНО НАДО ВЕСЬ ЭТОТ ДРАФТ
+    // ПЕРЕНЕСТИ В АРГУМЕНТЫ ФУНКЦИИ
 
     function plusAkku(branch, row) {
       for (let i = row; i < draft["rowStates"][branch].length; i += 1) {
@@ -60,34 +63,47 @@ const skills = (state = skillsState, action) =>
       }
     }
 
-    function checkRowToUnlock(branch, row) {
+    function checkRowToUnlock(branch) {
       draft["rowStates"][branch].forEach((row, i) => {
         if (i > 0) {
           // чтобы не трогать первый ряд, который constant
-          if (row.pointsToUnlock === row.akku) {
+          if (row.pointsToUnlock <= row.akku) {
             row.mode = "editable";
-          }
+          } // НЕОБХОДИМО ДОРАБОТАТЬ
         }
       });
+    }
+
+    function checkRowToLock(branch) {
+      for (let i = 1; i < draft["rowStates"][branch].length; i += 1) {
+        if (
+          draft["rowStates"][branch][i]["pointsToUnlock"] >
+          draft["rowStates"][branch][i - 1]["akku"]
+        )
+          draft["rowStates"][branch][i]["mode"] = "disabled";
+      }
     }
 
     if (action.type === "SET_LOADED") {
       draft.isLoaded = action.payload;
     }
     if (action.type === "PLUS_SKILL_POINT") {
-      let points = draft[action.branch][action.row][action.skill].points;
+      const points = draft[action.branch][action.row][action.skill].points;
       const pointsLimit =
         draft[action.branch][action.row][action.skill].pointsLimit;
       if (points < pointsLimit) {
         plusAkku(action.branch, action.row);
         checkRowToUnlock(action.branch);
+
         draft[action.branch][action.row][action.skill].points += 1;
       }
     }
     if (action.type === "MINUS_SKILL_POINT") {
-      let points = draft[action.branch][action.row][action.skill].points;
+      const points = draft[action.branch][action.row][action.skill].points;
       if (points > 0) {
         minusAkku(action.branch, action.row);
+        checkRowToLock(action.branch);
+
         draft[action.branch][action.row][action.skill].points -= 1;
       }
     }
@@ -95,8 +111,10 @@ const skills = (state = skillsState, action) =>
       const points = draft[action.branch][action.row][action.skill].points;
 
       if (points > 0) {
-        draft[action.branch][action.row][action.skill].points = 0;
         minusAkku(action.branch, action.row, points);
+        checkRowToLock(action.branch);
+
+        draft[action.branch][action.row][action.skill].points = 0;
       }
     }
     if (action.type === "SWITCH_BRANCH") {
