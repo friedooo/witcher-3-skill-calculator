@@ -63,26 +63,22 @@ const skills = (state = skillsState, action) =>
       }
     }
 
-    function checkRowToUnlock(branch) {
-      draft["rowStates"][branch].forEach((row, i) => {
-        if (i > 0) {
-          // чтобы не трогать первый ряд, который constant
-          if (row.pointsToUnlock <= row.akku) {
-            row.mode = "editable";
-          } // НЕОБХОДИМО ДОРАБОТАТЬ
-        }
-      });
-    }
-
-    function checkRowToLock(branch) {
+    function checkLock(branch) {
       for (let i = 1; i < draft["rowStates"][branch].length; i += 1) {
         if (
           draft["rowStates"][branch][i]["pointsToUnlock"] >
           draft["rowStates"][branch][i - 1]["akku"]
-        )
+        ) {
           draft["rowStates"][branch][i]["mode"] = "disabled";
+        } else {
+          {
+            draft["rowStates"][branch][i]["mode"] = "editable";
+          }
+        }
       }
     }
+
+    // чтобы избежать багов, сделаем автоматический clearRowAkku, когда очков не хватает!
 
     if (action.type === "SET_LOADED") {
       draft.isLoaded = action.payload;
@@ -93,7 +89,7 @@ const skills = (state = skillsState, action) =>
         draft[action.branch][action.row][action.skill].pointsLimit;
       if (points < pointsLimit) {
         plusAkku(action.branch, action.row);
-        checkRowToUnlock(action.branch);
+        checkLock(action.branch);
 
         draft[action.branch][action.row][action.skill].points += 1;
       }
@@ -102,7 +98,7 @@ const skills = (state = skillsState, action) =>
       const points = draft[action.branch][action.row][action.skill].points;
       if (points > 0) {
         minusAkku(action.branch, action.row);
-        checkRowToLock(action.branch);
+        checkLock(action.branch);
 
         draft[action.branch][action.row][action.skill].points -= 1;
       }
@@ -112,7 +108,7 @@ const skills = (state = skillsState, action) =>
 
       if (points > 0) {
         minusAkku(action.branch, action.row, points);
-        checkRowToLock(action.branch);
+        checkLock(action.branch);
 
         draft[action.branch][action.row][action.skill].points = 0;
       }
