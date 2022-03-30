@@ -69,6 +69,7 @@ const skills = (state = skillsState, action) =>
           draft["rowStates"][branch][i]["pointsToUnlock"] >
           draft["rowStates"][branch][i - 1]["akku"]
         ) {
+          clearRowFrom(branch, i);
           draft["rowStates"][branch][i]["mode"] = "disabled";
         } else {
           {
@@ -78,7 +79,22 @@ const skills = (state = skillsState, action) =>
       }
     }
 
-    // чтобы избежать багов, сделаем автоматический clearRowAkku, когда очков не хватает!
+    function clearRow(branch, row) {
+      draft["rowStates"][branch][row]["akku"] =
+        draft["rowStates"][branch][row - 1]["akku"];
+
+      for (let skill in draft[branch][row]) {
+        draft[branch][row][skill]["points"] = 0;
+      }
+    }
+
+    function clearRowFrom(branch, row) {
+      const objLength = Object.keys(draft[branch][row]).length;
+
+      for (let rowIndex = row; rowIndex < objLength; rowIndex += 1) {
+        clearRow(branch, rowIndex);
+      }
+    }
 
     if (action.type === "SET_LOADED") {
       draft.isLoaded = action.payload;
@@ -109,7 +125,6 @@ const skills = (state = skillsState, action) =>
       if (points > 0) {
         minusAkku(action.branch, action.row, points);
         checkLock(action.branch);
-
         draft[action.branch][action.row][action.skill].points = 0;
       }
     }
