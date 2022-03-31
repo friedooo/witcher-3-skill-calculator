@@ -4,7 +4,7 @@ import { current } from "immer";
 
 import { combat, signs, alchemy } from "../../db";
 
-const skillsState = {
+export const skillsState = {
   branches: ["combat", "signs", "alchemy", "general", "mutagens"],
   rowStates: {
     combat: [
