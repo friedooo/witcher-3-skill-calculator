@@ -1,17 +1,38 @@
-import filters from "../reducers/filters";
 import skills from "../reducers/skills";
 import { skillState } from "../reducers/skills";
 
-describe("single skill testing", () => {
-  test("should plus one point to skill", () => {
-    const action = {
-      type: "PLUS_SKILL_POINT",
-      branch: "combat",
-      row: 1,
-      skill: "Muscle Memory",
-    };
+import {
+  plusSkillPoint,
+  minusSkillPoint,
+  clearSkill,
+  switchBranch,
+} from "../actions/skills_a";
 
-    const newState = skills(skillState, action);
-    expect(newState.combat[1]["Muscle Memory"]["points"]).toBe(1);
+describe("single skill testing", () => {
+  const branch = "combat";
+  const row = 1;
+  const skill = "Muscle Memory";
+  let newState;
+
+  beforeEach(() => {
+    newState = skillState;
+  });
+
+  test("увеличиваем скилл на 1 единицу", () => {
+    newState = skills(newState, plusSkillPoint(branch, row, skill));
+    expect(newState.combat[row][skill]["points"]).toBe(1);
+  });
+
+  test("уменьшаем скилл на 1 единицу", () => {
+    newState = skills(newState, plusSkillPoint(branch, row, skill));
+    newState = skills(newState, minusSkillPoint(branch, row, skill));
+    expect(newState.combat[row][skill]["points"]).toBe(0);
+  });
+
+  test("Увеличиваем скилл на 7 единиц - проверяем что он не превышает лимит", () => {
+    for (let i = 0; i < 7; i += 1) {
+      newState = skills(newState, plusSkillPoint(branch, row, skill));
+    }
+    expect(newState.combat[row][skill]["points"]).toBe(5);
   });
 });

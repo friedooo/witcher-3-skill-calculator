@@ -54,6 +54,11 @@ function SkillBar() {
     }
   }
 
+  // React.useEffect(() => {
+  //   dispatch(plusSkillPoint("combat", 1, "Muscle Memory"));
+  //   dispatch(plusSkillPoint("combat", 1, "Muscle Memory"));
+  // }, []);
+
   return (
     <div className="skill-bar">
       <div className="content">
