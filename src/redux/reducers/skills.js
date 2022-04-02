@@ -36,6 +36,7 @@ export const skillsState = {
     ],
   },
   activeBranch: "combat",
+  availablePoints: 1,
   combat: combat,
   signs: signs,
   alchemy: alchemy,

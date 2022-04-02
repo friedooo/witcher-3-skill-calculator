@@ -127,3 +127,21 @@ describe("Switch branch testing", () => {
     expect(newState["activeBranch"]).toBe("signs");
   });
 });
+
+// ПРОБЛЕМОЧКИ
+describe("available points testing", () => {
+  let newState;
+  let startPoints;
+  const branch = "combat";
+  const row = 1;
+  const skill = "Muscle Memory";
+
+  beforeEach(() => {
+    newState = skillState;
+  });
+
+  test("Проверим уменьшение доступных очков", () => {
+    newState = skills(newState, plusSkillPoint(branch, row, skill));
+    expect(newState["availablePoints"]).toBe(0);
+  });
+});

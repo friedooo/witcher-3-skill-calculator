@@ -28,6 +28,7 @@ function SkillBar() {
   const skillsStore = useSelector(({ skills }) => skills);
   const activeBranch = useSelector(({ skills }) => skills.activeBranch);
   const rowStates = useSelector(({ skills }) => skills.rowStates);
+  const availablePoints = useSelector(({ skills }) => skills.availablePoints);
   const dispatch = useDispatch();
 
   const onSwitchBranch = (branch) => {
@@ -54,10 +55,11 @@ function SkillBar() {
     }
   }
 
-  // React.useEffect(() => {
-  //   dispatch(plusSkillPoint("combat", 1, "Muscle Memory"));
-  //   dispatch(plusSkillPoint("combat", 1, "Muscle Memory"));
-  // }, []);
+  React.useEffect(() => {
+    // dispatch(plusSkillPoint("combat", 1, "Muscle Memory"));
+    // dispatch(plusSkillPoint("combat", 1, "Muscle Memory"));
+    // console.log(availablePoints);
+  }, []);
 
   return (
     <div className="skill-bar">
