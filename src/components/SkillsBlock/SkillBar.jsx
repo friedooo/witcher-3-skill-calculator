@@ -97,7 +97,11 @@ function SkillBar() {
               <SkillHoc
                 // не забудь, описание скилов должно быть показано и для disabled скилов!
                 // хз как это сделать пока что
-                class={activeBranch}
+                class={
+                  skillsStore[activeBranch][row][skill.skillName]["points"]
+                    ? `${activeBranch}-activated`
+                    : activeBranch
+                }
                 counter
                 points={points}
                 pointsLimit={pointsLimit}
