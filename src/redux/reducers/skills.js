@@ -2,7 +2,7 @@ import produce from "immer";
 import { act } from "react-dom/test-utils";
 import { current } from "immer";
 
-import { combat, signs, alchemy } from "../../db";
+import { combat, signs, alchemy, general } from "../../db";
 
 export const skillsState = {
   branches: ["combat", "signs", "alchemy", "general", "mutagens"],
@@ -40,7 +40,7 @@ export const skillsState = {
   combat: combat,
   signs: signs,
   alchemy: alchemy,
-  general: {},
+  general: general,
   mutagens: {},
 };
 

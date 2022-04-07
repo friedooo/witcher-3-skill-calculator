@@ -7,6 +7,7 @@ import SkillLabelsArr from "../../images/SkillLabels";
 import CombatArr from "../../images/Combat";
 import SignsArr from "../../images/SIgns";
 import AlchemyArr from "../../images/Alchemy";
+import GeneralArr from "../../images/General";
 import PointButton from "./PointButton";
 import AvailableSkills from "./AvailableSkills";
 
@@ -23,6 +24,7 @@ function SkillBar() {
     combat: CombatArr,
     signs: SignsArr,
     alchemy: AlchemyArr,
+    general: GeneralArr,
   };
 
   const skillsStore = useSelector(({ skills }) => skills);
