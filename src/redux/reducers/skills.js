@@ -46,21 +46,18 @@ export const skillsState = {
 
 const skills = (state = skillsState, action) =>
   produce(state, (draft) => {
-    // ПОТОМ МОЖНО ОБЪЕДИНИТЬ plusAkku С minusAkku
     // НУЖНО ВЫНЕСТИ ЭТИ ФУНКЦИИ ЗА ПРЕДЕЛЫ IMMER, А ТО ОНИ КАЖДЫЙ
     // РАЗ ОБЪЯВЛЯЮТСЯ - ВОЗМОЖНО НАДО ВЕСЬ ЭТОТ ДРАФТ
     // ПЕРЕНЕСТИ В АРГУМЕНТЫ ФУНКЦИИ
 
-    function plusAkku(branch, row) {
-      for (let i = row; i < draft["rowStates"][branch].length; i += 1) {
-        draft["rowStates"][branch][i]["akku"] += 1;
-      }
-    }
-
-    function minusAkku(branch, row, value = 1) {
+    function akkuHandler(mode, branch, row, value = 1) {
       // в зависимости от 3-го параметра это и minus и clear
       for (let i = row; i < draft["rowStates"][branch].length; i += 1) {
-        draft["rowStates"][branch][i]["akku"] -= value;
+        if (mode === "plus") {
+          draft["rowStates"][branch][i]["akku"] += 1;
+        } else if (mode === "minus") {
+          draft["rowStates"][branch][i]["akku"] -= value;
+        }
       }
     }
 
@@ -105,7 +102,7 @@ const skills = (state = skillsState, action) =>
       const pointsLimit =
         draft[action.branch][action.row][action.skill].pointsLimit;
       if (points < pointsLimit) {
-        plusAkku(action.branch, action.row);
+        akkuHandler("plus", action.branch, action.row);
         checkLock(action.branch);
 
         draft[action.branch][action.row][action.skill].points += 1;
@@ -114,7 +111,7 @@ const skills = (state = skillsState, action) =>
     if (action.type === "MINUS_SKILL_POINT") {
       const points = draft[action.branch][action.row][action.skill].points;
       if (points > 0) {
-        minusAkku(action.branch, action.row);
+        akkuHandler("minus", action.branch, action.row);
         checkLock(action.branch);
 
         draft[action.branch][action.row][action.skill].points -= 1;
@@ -124,7 +121,7 @@ const skills = (state = skillsState, action) =>
       const points = draft[action.branch][action.row][action.skill].points;
 
       if (points > 0) {
-        minusAkku(action.branch, action.row, points);
+        akkuHandler("minus", action.branch, action.row, points);
         checkLock(action.branch);
         draft[action.branch][action.row][action.skill].points = 0;
       }
