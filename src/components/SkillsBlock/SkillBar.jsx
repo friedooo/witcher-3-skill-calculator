@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import SkillHoc from "../../hoc/SkillHoc";
 import SkillLabels from "./SkillLabels";
+import SkillInfo from "./SkillInfo";
 
 import SkillLabelsArr from "../../images/SkillLabels";
 import CombatArr from "../../images/Combat";
@@ -68,22 +69,18 @@ function SkillBar() {
     <div className="skill-bar">
       <div className="content">
         <SkillLabels switchBranch={onSwitchBranch} skillArr={SkillLabelsArr} />
-        <div className="skill-info">
-          <span>Умения</span>
-          <span>Очков потрачено: 1</span>
-        </div>
+        <SkillInfo />
         {skillsObj[activeBranch].map((skill, i) => {
           const row = Math.floor(i / 5);
           const points =
             skillsStore[activeBranch][row][skill.skillName]["points"];
           const pointsLimit =
             skillsStore[activeBranch][row][skill.skillName]["pointsLimit"];
+          const mode = rowStates[activeBranch][row]["mode"];
           return (
             <div
               className={`skill ${
-                rowStates[activeBranch][row]["mode"] === "disabled"
-                  ? "disabled-skill"
-                  : null
+                mode === "disabled" ? "disabled-skill" : null
               }`}
               key={i}
             >
@@ -99,7 +96,7 @@ function SkillBar() {
                 points={points}
                 pointsLimit={pointsLimit}
               >
-                {rowStates[activeBranch][row]["mode"] === "editable" ? (
+                {mode === "editable" ? (
                   <PointButton
                     onClick={
                       new ButtonEvents(activeBranch, row, skill.skillName)
