@@ -5,11 +5,14 @@ import SkillHoc from "../../hoc/SkillHoc";
 import SkillLabels from "./SkillLabels";
 import SkillInfo from "./SkillInfo";
 
-import SkillLabelsArr from "../../images/SkillLabels";
-import CombatArr from "../../images/Combat";
-import SignsArr from "../../images/SIgns";
-import AlchemyArr from "../../images/Alchemy";
-import GeneralArr from "../../images/General";
+import {
+  SkillLabelsArr,
+  CombatArr,
+  SignsArr,
+  AlchemyArr,
+  GeneralArr,
+} from "../../images";
+
 import PointButton from "./PointButton";
 import AvailableSkills from "./AvailableSkills";
 

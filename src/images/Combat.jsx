@@ -578,32 +578,4 @@ const CombatArr = [
   },
 ];
 
-// export {
-//   FastAttack,
-//   StrongAttack,
-//   Defense,
-//   Marksmanship,
-//   BattleTrance,
-//   MuscleMemory,
-//   StrengthTraining,
-//   ArrowDeflection,
-//   LightningReflexes,
-//   Resolve,
-//   PreciseBlows,
-//   CrushingBlows,
-//   FleetFooted,
-//   ColdBlood,
-//   Undying,
-//   Whirl,
-//   Rend,
-//   Counterattack,
-//   AnatomicalKnowledge,
-//   RazorFocus,
-//   CripplingStrikes,
-//   SunderArmor,
-//   DeadlyPrecision,
-//   CripplingShot,
-//   FloodOfAnger,
-// };
-
 export default CombatArr;

@@ -123,6 +123,4 @@ const SkillLabelsArr = [
   },
 ];
 
-//export { CombatSkills, Signs, AlchemySkills, GeneralSkills, Mutagens };
-
 export default SkillLabelsArr;
