@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import SkillHoc from "../../hoc/SkillHoc";
+import SkillLabels from "./SkillLabels";
 
 import SkillLabelsArr from "../../images/SkillLabels";
 import CombatArr from "../../images/Combat";
@@ -66,15 +67,7 @@ function SkillBar() {
   return (
     <div className="skill-bar">
       <div className="content">
-        {SkillLabelsArr.map(({ skillName, skillComponent }, i) => {
-          return (
-            <div className="skill" key={i}>
-              <SkillHoc onClick={() => onSwitchBranch(skillName)}>
-                {skillComponent}
-              </SkillHoc>
-            </div>
-          );
-        })}
+        <SkillLabels switchBranch={onSwitchBranch} skillArr={SkillLabelsArr} />
         <div className="skill-info">
           <span>Умения</span>
           <span>Очков потрачено: 1</span>
