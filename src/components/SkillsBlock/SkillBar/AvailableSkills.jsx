@@ -1,10 +1,10 @@
 import React from "react";
 
-function AvailableSkills() {
+function AvailableSkills({ availablePoints }) {
   return (
     <div className="avaliable-skills">
       <div className="info">Points available</div>
-      <div className="points-number">0 </div>
+      <div className="points-number"> {availablePoints} </div>
     </div>
   );
 }

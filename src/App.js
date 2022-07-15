@@ -1,5 +1,5 @@
-import SkillsTree from "./components/SkillsTree/SkillsTree";
-import SkillsBlock from "./components/SkillsBlock/SkillsBlock";
+import SkillsTree from "./components/SkillsTree";
+import SkillsBlock from "./components/SkillsBlock";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import SkillHoc from "../../hoc/SkillHoc";
+import SkillHoc from "../../../hoc/SkillHoc";
 
 const SkillLabels = ({ skillArr, switchBranch }) => {
   return (

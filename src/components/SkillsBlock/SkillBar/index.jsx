@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import SkillHoc from "../../hoc/SkillHoc";
+import SkillHoc from "../../../hoc/SkillHoc";
 import SkillLabels from "./SkillLabels";
 import SkillInfo from "./SkillInfo";
+import PointButton from "./PointButton";
+import AvailableSkills from "./AvailableSkills";
 
 import {
   SkillLabelsArr,
@@ -11,10 +13,7 @@ import {
   SignsArr,
   AlchemyArr,
   GeneralArr,
-} from "../../images";
-
-import PointButton from "./PointButton";
-import AvailableSkills from "./AvailableSkills";
+} from "../../../images";
 
 import {
   plusSkillPoint,
@@ -22,7 +21,7 @@ import {
   clearSkill,
   switchBranch,
   addSpentPoint,
-} from "../../redux/actions/skills_a";
+} from "../../../redux/actions/skills_a";
 
 function SkillBar() {
   const skillsObj = {
@@ -113,7 +112,7 @@ function SkillBar() {
           );
         })}
       </div>
-      <AvailableSkills />
+      <AvailableSkills availablePoints={availablePoints} />
     </div>
   );
 }

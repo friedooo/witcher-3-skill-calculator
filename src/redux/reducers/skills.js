@@ -36,7 +36,7 @@ export const skillsState = {
     ],
   },
   activeBranch: "combat",
-  availablePoints: 1,
+  availablePoints: 30,
   combat: combat,
   signs: signs,
   alchemy: alchemy,
@@ -89,6 +89,10 @@ function checkLock(draft, branch) {
   }
 }
 
+function availablePointsHadler(draft, value) {
+  draft["availablePoints"] += value;
+}
+
 const skills = (state = skillsState, action) =>
   produce(state, (draft) => {
     // НУЖНО ВЫНЕСТИ ЭТИ ФУНКЦИИ ЗА ПРЕДЕЛЫ IMMER, А ТО ОНИ КАЖДЫЙ
@@ -105,7 +109,7 @@ const skills = (state = skillsState, action) =>
       if (points < pointsLimit) {
         akkuHandler(draft, "plus", action.branch, action.row);
         checkLock(draft, action.branch);
-
+        availablePointsHadler(draft, -1);
         draft[action.branch][action.row][action.skill].points += 1;
       }
     }
