@@ -13,7 +13,7 @@ import {
   SignsArr,
   AlchemyArr,
   GeneralArr,
-} from "../../../images";
+} from "../../../images/svg";
 
 import {
   plusSkillPoint,
