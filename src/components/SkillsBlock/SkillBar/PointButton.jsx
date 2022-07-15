@@ -6,9 +6,12 @@ function PointButton(props) {
       <div onClick={() => props.onClick.clearSkill()} className="reset">
         Reset
       </div>
-      <div onClick={() => props.onClick.plusPoint()} className="add">
-        +
-      </div>
+      {props.availablePoints ? (
+        <div onClick={() => props.onClick.plusPoint()} className="add">
+          +
+        </div>
+      ) : null}
+
       <div onClick={() => props.onClick.minusPoint()} className="remove">
         -
       </div>

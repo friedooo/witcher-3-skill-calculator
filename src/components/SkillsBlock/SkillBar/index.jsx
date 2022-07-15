@@ -100,6 +100,7 @@ function SkillBar() {
               >
                 {mode === "editable" ? (
                   <PointButton
+                    availablePoints={availablePoints}
                     onClick={
                       new ButtonEvents(activeBranch, row, skill.skillName)
                     }

@@ -36,7 +36,7 @@ export const skillsState = {
     ],
   },
   activeBranch: "combat",
-  availablePoints: 30,
+  availablePoints: 10,
   combat: combat,
   signs: signs,
   alchemy: alchemy,
@@ -118,7 +118,7 @@ const skills = (state = skillsState, action) =>
       if (points > 0) {
         akkuHandler(draft, "minus", action.branch, action.row);
         checkLock(draft, action.branch);
-
+        availablePointsHadler(draft, 1);
         draft[action.branch][action.row][action.skill].points -= 1;
       }
     }
@@ -128,6 +128,9 @@ const skills = (state = skillsState, action) =>
       if (points > 0) {
         akkuHandler(draft, "minus", action.branch, action.row, points);
         checkLock(draft, action.branch);
+        const pointsAmount =
+          draft[action.branch][action.row][action.skill].points;
+        availablePointsHadler(draft, pointsAmount);
         draft[action.branch][action.row][action.skill].points = 0;
       }
     }
